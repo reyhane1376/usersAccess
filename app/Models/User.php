@@ -50,4 +50,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Subscription::class);
     }
+
+    public function isActive(): bool
+    {
+        return $this->is_active;
+    }
+
+    public function isDeactive() :bool
+    {
+        return !$this->is_active;
+    }
 }
